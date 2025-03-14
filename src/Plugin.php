@@ -70,7 +70,7 @@ class Plugin extends BasePlugin
                     $entry = $event->sender;
 
                     // Possibly a nested element
-                    if($entry->section){
+                    if(!$entry->section){
                         return null;
                     }
 
