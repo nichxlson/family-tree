@@ -69,6 +69,11 @@ class Plugin extends BasePlugin
                 function ($event) {
                     $entry = $event->sender;
 
+                    // Possibly a nested element
+                    if($entry->section){
+                        return null;
+                    }
+
                     if($entry->section->type !== "structure"){
                         return null;
                     }
